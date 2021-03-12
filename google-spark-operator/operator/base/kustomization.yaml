@@ -7,7 +7,6 @@ images:
   newName: gcr.io/spark-operator/spark-operator
   newTag: v1beta2-1.2.0-3.0.0
 kind: Kustomization
-namePrefix: spark-operator
 namespace: opendatahub
 resources:
 - spark-sa.yaml
