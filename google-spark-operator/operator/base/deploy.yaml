@@ -45,7 +45,7 @@ spec:
             - -metrics-port=10254
             - -metrics-endpoint=/metrics
             - -metrics-prefix=
-            - -enable-webhook=true'
+            - -enable-webhook=true
             - -webhook-svc-namespace=spark-operator
             - -webhook-port=8080
             - -webhook-svc-name=spark-operator-webhook
