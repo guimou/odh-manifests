@@ -1,0 +1,32 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: spark-operator-webhook-init
+  namespace: spark-operator
+  labels:
+    app.kubernetes.io/instance: spark-operator
+    app.kubernetes.io/name: spark-operator
+spec:
+  parallelism: 1
+  completions: 1
+  backoffLimit: 6
+  template:
+    metadata:
+      name: spark-operator-webhook-init
+      labels:
+        job-name: spark-operator-webhook-init
+    spec:
+      containers:
+        - name: main
+          image: 'gcr.io/spark-operator/spark-operator:v1beta2-1.2.0-3.0.0'
+          command:
+            - /usr/bin/gencerts.sh
+            - '-n'
+            - spark-operator
+            - '-s'
+            - spark-operator-webhook
+            - '-p'
+          imagePullPolicy: IfNotPresent
+          securityContext: {}
+      restartPolicy: OnFailur
+      serviceAccountName: spark-operator

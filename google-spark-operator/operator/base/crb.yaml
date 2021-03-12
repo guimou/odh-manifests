@@ -5,7 +5,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: operator-cr
+  name: spark-operator
 subjects:
 - kind: ServiceAccount
-  name: operator-sa
+  name: spark-operator

@@ -3,16 +3,15 @@ kind: Role
 metadata:
   name: spark-role
 rules:
-- apiGroups:
-  - ""
+- verbs:
+    - '*'
+  apiGroups:
+    - ''
   resources:
-  - pods
-  verbs:
-  - get
-  - list
-  - watch
-  - create
-  - delete
-  - deletecollection
-  - patch
-  - update
+    - pods
+- verbs:
+    - '*'
+  apiGroups:
+    - ''
+  resources:
+    - services
