@@ -28,5 +28,5 @@ spec:
             - '-p'
           imagePullPolicy: IfNotPresent
           securityContext: {}
-      restartPolicy: OnFailur
+      restartPolicy: OnFailure
       serviceAccountName: spark-operator
